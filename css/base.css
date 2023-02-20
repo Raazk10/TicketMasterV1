@@ -1,0 +1,27 @@
+body {
+	font-family: 'Times New Roman';
+	font-size: 30px;
+	padding: 5rem;
+	padding-top: 0;
+	background: var(--background);
+	color: var(--foreground);
+}
+
+button {
+	padding: var(--padding);
+	border-radius: var(--border-radius);
+	background: var(--primary);
+}
+
+button:hover {
+	background: var(--highlight);
+}
+
+section {
+	padding: 1rem;
+	border: var(--border-size) solid var(--primary);
+}
+
+section:not(:last-child) {
+	margin-bottom: 5rem;
+}
