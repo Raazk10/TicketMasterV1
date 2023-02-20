@@ -1,11 +1,12 @@
 :root {
-	--foreground: black;
-	--background: hsl(0, 100%, 99%);
-	--highlight: hsl(0, 100%, 85%);
+	--foreground: #333;
+	--background: hwb(0 9% 90%);
+	--highlight: hsl(256, 80%, 30%);
+
 	;
 
-	--primary: hsl(0, 100%, 90%);
-	--secondary: hsl(0, 100%, 95%);
+	--primary: #fff;
+	--secondary: rgb(5, 0, 0);
 
 	--padding: 1rem;
 
