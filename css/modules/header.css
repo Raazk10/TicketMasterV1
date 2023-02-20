@@ -1,4 +1,4 @@
-.main-head {
+.header {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -8,14 +8,14 @@
 }
 
 /* Style the logo */
-.logo {
+.header__logo {
 	font-size: 1.5rem;
 	font-weight: bold;
 }
 
 /* Style the main navigation */
 
-.nav__list {
+.header__menu {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -26,11 +26,11 @@
 	/* display: none; */
 }
 
-.nav__item {
+.header__menu-item {
 	margin: 10px 0;
 }
 
-.nav__link {
+.header__menu-link {
 	display: block;
 	padding: 10px;
 	text-align: center;
@@ -40,6 +40,6 @@
 	font-size: 1rem;
 }
 
-.nav__link:hover {
+.header__menu-link:hover {
 	background-color: var(--background);
 }
