@@ -8,6 +8,7 @@
 		grid-template-columns: repeat(12, 1fr);
 		grid-template-rows: auto;
 		grid-gap: 1rem;
+
 	}
 
 	/* Position the header and navigation */
@@ -28,13 +29,26 @@
 		grid-column: 1 / -1;
 		display: flex;
 		justify-content: flex-end;
+		background-color: transparent;
+		transition: none;
+	}
+
+	.header__navigation--visible {
+		display: none;
 	}
 
 	.header__menu {
 		display: flex;
 		list-style: none;
 		flex-direction: row;
+
+
 	}
+
+	.header__menu-button {
+		display: none;
+	}
+
 
 	.header__menu-item {
 		margin-right: 1rem;
