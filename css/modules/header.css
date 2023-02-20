@@ -5,12 +5,98 @@
 	padding: 1rem;
 	background-color: var(--foreground);
 	color: var(--primary);
+	position: relative;
 }
 
 /* Style the logo */
 .header__logo {
 	font-size: 1.5rem;
 	font-weight: bold;
+}
+
+/* Style the menu button */
+
+.header__menu-button {
+	display: block;
+	background-color: none;
+	border: none;
+	padding: 1rem;
+	margin-right: 1rem;
+	cursor: pointer;
+	color: var(--primary);
+	font-size: 1.5rem;
+}
+
+.header__menu-button:hover {
+	background-color: var(--background);
+}
+
+.header__menu-icon {
+	display: block;
+	width: 1.5rem;
+	height: 0.25rem;
+	border-radius: 1rem;
+	background: var(--primary);
+	position: relative;
+}
+
+.header__menu-icon::before,
+.header__menu-icon::after {
+	content: "";
+	display: block;
+	width: 100%;
+	height: 100%;
+	border-radius: 1rem;
+	background: var(--primary);
+	position: absolute;
+}
+
+.header__menu-icon::before {
+	transform: translateY(-0.5rem);
+}
+
+.header__menu-icon::after {
+	transform: translateY(0.5rem);
+}
+
+/* menu icon close*/
+
+.header__menu-icon--close {
+	transform: rotate(45deg);
+}
+
+.header__menu-icon--close::before {
+	transform: translateY(-50%) rotate(-90deg);
+
+	top: 50%;
+}
+
+.header__menu-icon--close::after {
+	transform: translateY(50%) rotate(45deg);
+
+	opacity: 0;
+}
+
+.header__navigation {
+	display: none;
+}
+
+.header__navigation--visible {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	width: 100%;
+	max-width: 600px;
+	height: calc(100vh - 4rem);
+
+	padding: 1rem;
+	background-color: var(--foreground);
+	transition: right 0.3s ease-out;
+	z-index: 1;
+	font-weight: 700;
+	opacity: 90%;
+
+	display: block;
 }
 
 /* Style the main navigation */
@@ -23,7 +109,6 @@
 	margin: 0;
 	padding: 0;
 	list-style: none;
-	/* display: none; */
 }
 
 .header__menu-item {
