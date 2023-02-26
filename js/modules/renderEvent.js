@@ -1,11 +1,10 @@
-export default function RenderEvent(events) {
-  const ulElement = document.querySelector(".card__container");
+const ulElement = document.querySelector(".card__container");
 
-  console.log(events);
-
-  events.forEach((event) => {
+export default function renderEvent(searchedValue) {
+  const cardElements = searchedValue.map((event, index) => {
     const cardElement = document.createElement("div");
     cardElement.classList.add("card");
+    cardElement.dataset.eventId = event.id;
 
     const cardContent = document.createElement("div");
     cardContent.classList.add("card__content");
@@ -20,17 +19,15 @@ export default function RenderEvent(events) {
 
     const textElement = document.createElement("p");
     textElement.classList.add("card__text");
-    textElement.textContent = `${events.indexOf(event) + 1} Event`;
-
-    /*  ulImage.src = event.img; */
+    textElement.textContent = `${index + 1} Event`;
 
     cardContent.appendChild(titleElement);
     cardContent.appendChild(textElement);
 
     cardElement.appendChild(imageElement);
     cardElement.appendChild(cardContent);
-
-    ulElement.appendChild(cardElement);
-    console.log(event);
+    return cardElement;
   });
+  ulElement.innerHTML = "";
+  ulElement.append(...cardElements);
 }
