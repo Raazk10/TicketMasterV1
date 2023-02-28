@@ -18,4 +18,12 @@ export default function handleSearchEvent() {
     renderEvent(searchedValue);
     searchInput.value = "";
   }
+  // Redirect to event details page if user clicked on an event card
+  const cardElements = document.querySelectorAll(".card");
+  cardElements.forEach((card) => {
+    card.addEventListener("click", () => {
+      const eventId = card.dataset.eventId;
+      window.location.href = `eventDetails.html?eventId=${eventId}`;
+    });
+  });
 }

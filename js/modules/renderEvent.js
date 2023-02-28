@@ -28,6 +28,7 @@ export default function renderEvent(searchedValue) {
     cardElement.appendChild(cardContent);
     return cardElement;
   });
+
   ulElement.innerHTML = "";
   ulElement.append(...cardElements);
 }

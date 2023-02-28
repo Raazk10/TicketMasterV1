@@ -1,25 +1,33 @@
 const apiKey = "aLGf7LIEfrlaEtpVXyO5Oj9InyDNM8gN";
 const baseUrl = `https://app.ticketmaster.com/discovery/v2/events/`;
-
 const ulElement = document.querySelector(".card__container");
 
 export default function getEventDetails() {
   ulElement.addEventListener("click", async (e) => {
     const cardElement = e.target.closest(".card");
-    if (!cardElement) return;
     const eventId = cardElement.dataset.eventId;
+    const urlParams = new URLSearchParams(window.location.search);
+    const existingEventId = urlParams.get("eventId");
+    if (eventId) {
+      urlParams.set("eventId", eventId);
+    } else if (existingEventId) {
+      eventId = existingEventId;
+    } else {
+      // handle error here, no event ID found
+      return;
+    }
+    window.location.href = `eventDetails.html?eventId=${eventId}`;
     const eventDetails = await getEventDetailsById(eventId);
     showEventDetails(eventDetails);
-    window.location.href = "eventDetails.html";
   });
 
-  async function getEventDetailsById(eventId) {
-    const url = `${baseUrl}${eventId}?apikey=${apiKey}&locale=*`;
+  async function getEventDetailsById(id) {
+    const url = `${baseUrl}${id}?apikey=${apiKey}&locale=*`;
     const response = await fetch(url);
     const data = await response.json();
     const event = data._embedded?.events?.[0];
     if (!event) {
-      throw new Error(`Could not find event with ID ${eventId}`);
+      throw new Error(`Could not find event with ID ${id}`);
     }
     return {
       name: event.name,
@@ -39,6 +47,7 @@ export default function getEventDetails() {
 
   function showEventDetails(eventDetails) {
     // Populate the placeholders in your event detail HTML file
+
     const nameElement = document.querySelector(".event__name");
     const dateElement = document.querySelector(".event__date");
     const timeElement = document.querySelector(".event__time");

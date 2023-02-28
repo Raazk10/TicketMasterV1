@@ -4,5 +4,4 @@ import getEventDetails from "./modules/eventDetails.js";
 
 Header();
 handleSearchEvent();
-
 getEventDetails();
