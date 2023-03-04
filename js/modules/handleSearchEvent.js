@@ -2,6 +2,7 @@ import fetchEventSearch from "./fetchEventSearch.js";
 import renderSearchEvent from "./renderSearchEvent.js";
 
 export default function handleSearchEvent() {
+  // qyery selector
   const searchInput = document.querySelector(".search__input");
   const searchForm = document.querySelector(".search");
   //event listener

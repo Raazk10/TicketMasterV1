@@ -2,7 +2,7 @@ const apiKey = "aLGf7LIEfrlaEtpVXyO5Oj9InyDNM8gN";
 const baseUrl = "https://app.ticketmaster.com/discovery/v2/events/";
 
 export default async function getEventDetails() {
-  const eventDetailContainer = document.querySelector(".eventDetails");
+  const eventDetailContainer = document.querySelector(".event-card__details");
   const urlParams = new URLSearchParams(window.location.search);
   const eventId = urlParams.get("id");
 
@@ -15,19 +15,23 @@ export default async function getEventDetails() {
   if (!result) {
     throw new Error(`Could not find event with ID ${eventId}`);
   }
-  const eventElement = document.createElement("p");
-  eventElement.classList.add("event__name");
-  eventElement.textContent = `Event: ${result.name}`;
+  const eventElement = document.querySelector(".event-card__name");
+  eventElement.textContent = result.name;
 
-  const dateElement = document.createElement("p");
+  /* const dateElement = document.createElement("p");
   dateElement.classList.add("event__date");
-  dateElement.textContent = `startDate: ${result.dates.start.localDate}`;
+  dateElement.textContent = `startDate: ${result.dates.start.localDate}`; */
+
+  const eventInfoBackground = document.querySelector(
+    ".event__info__background"
+  );
 
   const imageElement = document.createElement("img");
-  imageElement.classList.add("card__image");
+  imageElement.classList.add("event-card__image");
   const image = result.images.find((image) => image.width >= 500);
   if (image) {
     imageElement.src = image.url;
+    eventInfoBackground.style.backgroundImage = `url(${image.url})`;
   } else {
     const errorMessage = document.createElement("p");
     errorMessage.textContent = "image not found";
@@ -37,7 +41,7 @@ export default async function getEventDetails() {
 
   eventDetailContainer.appendChild(imageElement);
   eventDetailContainer.appendChild(eventElement);
-  eventDetailContainer.appendChild(dateElement);
+
   /*  return {
     name: event.name,
     id: event.id,
