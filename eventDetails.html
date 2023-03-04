@@ -11,21 +11,39 @@
 </head>
 
 <body>
-	<a href="./index.html">
-		<header>TicketMaster</header>
-	</a>
-	<div class="container">
-		<h2>Event details</h2>
-		<div class="image-container">
+	<div class="event">
+		<a href="./index.html" class="event__logo-link">
+			<header class="event__header">
+				<div class="event__logo">ticketMaster</div>
+			</header>
+		</a>
 
+		<section class="event__info">
+			<div class="event-card">
+				<div class="event-card__details">
+					<h1 class="event-card__name">Event Name</h1>
+				</div>
+
+			</div>
+			<div class="event-card__button">
+				<button class="event-card__details-button">info!</button>
+			</div>
+			<div class="event__info__background"></div>
+		</section>
+
+
+		<div class="event__list">
+			<h2 class="event__list-title">Similar Events</h2>
+			<ul class="event__list-items">
+				<!-- dynamically generated list items will go here -->
+			</ul>
 		</div>
 
-		<div class="eventDetails">
-
-
-		</div>
-
+		<footer class="event__footer">
+			ticketMaster@2023
+		</footer>
 	</div>
+
 </body>
 
 </html>
