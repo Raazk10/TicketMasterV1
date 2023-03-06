@@ -1,17 +1,9 @@
 const apiKey = "aLGf7LIEfrlaEtpVXyO5Oj9InyDNM8gN";
 const baseUrl = "https://app.ticketmaster.com/discovery/v2/events/";
-
-//query selector
-const dateElement = document.querySelector(".event__list-date");
-const timeElement = document.querySelector(".event__list-time");
-const nameElement = document.querySelector(".event__list-name");
-const venueElement = document.querySelector(".event__list-venue");
-const cityElement = document.querySelector(".event__list-city");
-const eventGenre = document.querySelector(".event__genre");
-const eventSegment = document.querySelector(".event__segment");
-const eventSubGenre = document.querySelector(".event__subGenre");
+import eventInformation from "./eventInformation.js";
 
 export default async function getEventDetails() {
+  eventInformation();
   const eventDetailContainer = document.querySelector(".event-card__details");
   const urlParams = new URLSearchParams(window.location.search);
   const eventId = urlParams.get("id");

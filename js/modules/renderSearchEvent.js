@@ -4,6 +4,7 @@ const contentHeading = document.querySelector(".content__heading");
 export default function renderSearchEvent(searchedValue) {
   //count the total numbet of events
   const totalEvents = searchedValue.length;
+
   // update the content heading with the total count
   contentHeading.textContent = `${totalEvents} events in this area`;
 

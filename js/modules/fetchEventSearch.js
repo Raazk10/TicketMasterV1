@@ -1,8 +1,8 @@
 const apiKey = "aLGf7LIEfrlaEtpVXyO5Oj9InyDNM8gN";
-const baseUrl = `https://app.ticketmaster.com/discovery/v2/events.json?&apikey=${apiKey}&locale=*&keyword=&city=`;
+const baseUrl = `https://app.ticketmaster.com/discovery/v2/events.json?&apikey=${apiKey}&locale=*&keyword=`;
 
-export default async function fetchEventSearch(cityName) {
-  const response = await fetch(`${baseUrl}${cityName}`);
+export default async function fetchEventSearch(query) {
+  const response = await fetch(`${baseUrl}${query}`);
   const result = await response.json();
 
   const events = result._embedded?.events?.map((event) => {

@@ -14,6 +14,7 @@ export default function eventInformation() {
   //method
 
   function showInformationPage() {
+    console.log("button");
     eventInformation.classList.add("event__information-visible");
   }
 
