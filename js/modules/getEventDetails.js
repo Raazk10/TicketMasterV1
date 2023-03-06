@@ -11,10 +11,17 @@ const eventDetailContainer = document.querySelector(".event-card__details");
 export default async function getEventDetails() {
   eventInformation();
 
+  const result = await fetchEventDetails(eventIdurl);
+  renderHtml(result);
+}
+async function fetchEventDetails(eventIdurl) {
   const response = await fetch(eventIdurl);
   const result = await response.json();
   console.log(result);
+  return result;
+}
 
+function renderHtml(result) {
   const eventElement = document.querySelector(".event-card__name");
   eventElement.textContent = result.name;
 
