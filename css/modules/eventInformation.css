@@ -1,0 +1,107 @@
+/**** Event information*****
+***************************/
+
+.event__information {
+
+	display: flex;
+	flex-direction: column;
+	background-color: var(--primary);
+	padding: 10px;
+	margin: 10px;
+	color: var(--secondary);
+	height: 100vh;
+	scroll-behavior: smooth;
+	border-radius: 5px;
+	border: 1px solid rebeccapurple;
+	font-size: 1rem;
+	margin-top: 10px;
+	overflow: hidden;
+	scroll-behavior: auto;
+	display: none;
+
+}
+
+.event__information-visible {
+	display: block;
+}
+
+.event__information-heading {
+	position: sticky;
+	top: 0;
+	z-index: 1;
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	justify-content: center;
+	align-items: center;
+	padding: 10px;
+	border-bottom: 1px solid grey;
+
+
+}
+
+.backicon {
+	width: 24px;
+	height: 24px;
+}
+
+.event__information-heading-title {
+
+	font-size: 1.3rem;
+}
+
+.event__information-eventName {
+	margin-top: 1.4rem;
+	font-size: 1.5rem;
+}
+
+.event__information-date {
+	margin-top: 1.2rem;
+}
+
+.event__information-venue {
+	margin-top: 0.5rem;
+	text-decoration: underline;
+	color: blue;
+}
+
+.event__information-descriptionHeading {
+	margin-top: 1.4rem;
+	font-size: 1.4rem;
+}
+
+.event__information-description {
+	margin-top: 0.2rem;
+}
+
+.organizer-link {
+	margin-top: 1.4rem;
+}
+
+.organizer {
+	text-decoration: underline;
+	color: blue;
+}
+
+.event__information-price {
+	margin-top: 1.4rem;
+}
+
+.event__information-price-heading {
+	font-size: 1.2rem;
+}
+
+.event__information-price-detail {
+	margin-top: 0.6rem;
+}
+
+.event__information-ticketLimit {
+	margin-top: 1.2rem;
+}
+
+.event__information-ticketLimit-heading {
+	font-size: 1.2rem;
+}
+
+.event__information-ticketLimit-information {
+	margin-top: 0.6rem;
+}

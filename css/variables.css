@@ -1,13 +1,13 @@
 :root {
-	--foreground: #333;
+	--foreground: #1c0e5f;
 	--background: hwb(0 9% 90%);
 	--highlight: hsl(256, 80%, 30%);
 
-	;
 
 	--primary: #fff;
 	--secondary: rgb(5, 0, 0);
-
+	--button-color: rgb(0, 0, 255);
+	--button-color-hover: #1b4d29;
 	--padding: 1rem;
 
 	--border-radius: 0.5rem;

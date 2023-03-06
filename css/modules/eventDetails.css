@@ -7,7 +7,11 @@
 
 .event__logo-link {
 	text-decoration: none;
-	color: #000;
+
+}
+
+.event__logo:hover {
+	font-style: italic;
 }
 
 .event__header {
@@ -56,25 +60,27 @@
 	overflow: hidden;
 	width: 100%;
 	max-width: 350px;
-	height: max-content;
+	height: 280px;
+
 
 }
 
 .event-card__image {
-	max-width: 300px;
+	max-width: 400px;
 	height: auto;
 
 }
 
 .event-card__details {
-	padding: 1rem;
+	padding: 5px;
 	text-align: center;
+	height: 200px;
 
 }
 
 .event-card__name {
-	margin: 0;
-	font-size: 1.5rem;
+
+	font-size: 0.8rem;
 	font-weight: 700;
 	color: var(--primary);
 
@@ -92,41 +98,96 @@
 	padding: 10px;
 	border: none;
 	border-radius: 5px;
-	background: #3507aa;
+	background: var(--button-color);
 	color: var(--primary);
 	font-size: 1rem;
 	cursor: pointer;
 	margin-left: 20px;
+	font-style: italic;
 }
 
 .event-card__details-button:hover {
-	background: #011914;
+	background: var(--button-color-hover);
+}
+
+.event__classification {
+	display: flex;
+	flex-direction: row;
+	gap: 10px;
+	color: var(--primary);
+	font-size: 0.8rem;
 }
 
 .event__list {
-	padding: 1rem 0;
-}
 
-.event__list-title {
-	margin: 0;
-	font-size: 1.5rem;
-	font-weight: bold;
 	color: var(--primary);
+	font-size: 1rem;
+
 }
 
-.event__list-items {
-	list-style: none;
-	padding: 0;
-	margin: 0;
-}
 
 .event__footer {
 	background-color: var(--foreground);
-	color: #fff;
+	color: var(--primary);
 	text-align: center;
 	padding: 1rem;
 	font-weight: bold;
 	font-size: 1rem;
 	color: var(--primary);
+	margin-top: 10px;
 
+}
+
+/*table styling*/
+.event__table {
+	margin: 0 auto;
+	max-width: 100%;
+	margin-bottom: 10px;
+}
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+th,
+td {
+	padding: 12px;
+	text-align: left;
+}
+
+th {
+	background-color: var(--foreground);
+	color: var(--primary);
+	font-weight: 700;
+	font-size: 1.2rem;
+
+}
+
+tr:nth-child(even) {
+	background-color: var(--primary);
+}
+
+.event__list-date {
+	font-weight: bold;
+}
+
+.event__list-venue {
+	font-style: italic;
+}
+
+.event__list-city {
+	font-style: italic;
+}
+
+.buy-ticket-button {
+	background-color: var(--button-color);
+	color: var(--primary);
+	padding: 10px 20px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.buy-ticket-button:hover {
+	background-color: var(--button-color-hover);
 }

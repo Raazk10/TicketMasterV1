@@ -1,6 +1,6 @@
 .search {
 	position: relative;
-	background-color: #eee;
+	background-color: var(--primary);
 	padding: 1rem;
 }
 
@@ -24,10 +24,14 @@
 	bottom: 0;
 
 	border-radius: 0.5rem;
-	background-color: #333;
-	color: #fff;
+	background-color: var(--button-color);
+	color: var(--primary);
 	padding: 0.5rem;
 	cursor: pointer;
+}
+
+.search__button:hover {
+	background-color: var(--button-color-hover);
 }
 
 .event__venue {
