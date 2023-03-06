@@ -42,4 +42,22 @@ export default function renderSearchEvent(searchedValue) {
 
   ulElement.innerHTML = "";
   ulElement.append(...cardElements);
+
+  const cardContainerHtml = ulElement.innerHTML;
+  sessionStorage.setItem("cardContainerHtml", cardContainerHtml);
 }
+// Retrieve and render the card elements from sessionStorage when the page loads
+window.addEventListener("load", () => {
+  const cardContainerHtml = sessionStorage.getItem("cardContainerHtml");
+  if (cardContainerHtml) {
+    ulElement.innerHTML = cardContainerHtml;
+    // Add event listeners to the card elements
+    const cardElements = ulElement.querySelectorAll(".card");
+    cardElements.forEach((cardElement) => {
+      const eventId = cardElement.dataset.eventId;
+      cardElement.addEventListener("click", () => {
+        window.location.href = `/eventDetails.html?id=${eventId}`;
+      });
+    });
+  }
+});
