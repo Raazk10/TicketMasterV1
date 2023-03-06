@@ -1,6 +1,7 @@
 /* Style the main content area */
 .content {
-	/* height: 100vh; */
+
+	height: 100%;
 	padding: 1rem;
 	border-top: 1px solid var(--primary);
 	border-bottom: 1px solid var(--primary);

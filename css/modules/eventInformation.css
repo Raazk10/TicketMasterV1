@@ -14,7 +14,7 @@
 	border: 1px solid rebeccapurple;
 	font-size: 1rem;
 	margin-top: 10px;
-	overflow: hidden;
+	overflow: auto;
 	max-width: 600px;
 	position: absolute;
 	top: -90px;
@@ -29,6 +29,7 @@
 
 }
 
+
 .event__information-heading {
 	position: sticky;
 	top: 0;
@@ -39,8 +40,6 @@
 	align-items: center;
 	padding: 10px;
 	border-bottom: 1px solid grey;
-
-
 }
 
 .backicon {
