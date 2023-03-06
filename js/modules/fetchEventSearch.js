@@ -1,5 +1,5 @@
-const apiKey = "aLGf7LIEfrlaEtpVXyO5Oj9InyDNM8gN";
-const url = `https://app.ticketmaster.com/discovery/v2/events.json?&apikey=${apiKey}&locale=*&keyword=`;
+const clientId = "aLGf7LIEfrlaEtpVXyO5Oj9InyDNM8gN";
+const url = `https://app.ticketmaster.com/discovery/v2/events.json?&apikey=${clientId}&locale=*&keyword=`;
 
 export default async function fetchEventSearch(query) {
   const response = await fetch(`${url}${query}`);

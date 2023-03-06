@@ -1,15 +1,14 @@
-const apiKey = "aLGf7LIEfrlaEtpVXyO5Oj9InyDNM8gN";
-const baseUrl = "https://app.ticketmaster.com/discovery/v2/events/";
 import eventInformation from "./eventInformation.js";
+const clientId = "aLGf7LIEfrlaEtpVXyO5Oj9InyDNM8gN";
+const baseUrl = "https://app.ticketmaster.com/discovery/v2/events/";
+
+const urlParams = new URLSearchParams(window.location.search);
+const eventId = urlParams.get("id");
+const url = `${baseUrl}${eventId}.json?apikey=${clientId}`;
+const eventDetailContainer = document.querySelector(".event-card__details");
 
 export default async function getEventDetails() {
   eventInformation();
-  const eventDetailContainer = document.querySelector(".event-card__details");
-  const urlParams = new URLSearchParams(window.location.search);
-  const eventId = urlParams.get("id");
-
-  /* const url = `${baseUrl}${eventId}.json?apikey=${apiKey}`; */
-  const url = `${baseUrl}${eventId}.json?apikey=${apiKey}`;
   console.log(eventId);
   const response = await fetch(url);
   const result = await response.json();
