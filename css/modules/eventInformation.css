@@ -58,8 +58,12 @@
 	font-size: 1.5rem;
 }
 
+.event__information-time {
+	margin-top: 1rem;
+}
+
 .event__information-date {
-	margin-top: 1.2rem;
+	margin-top: 0.5rem;
 }
 
 .event__information-venue {
