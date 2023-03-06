@@ -14,6 +14,7 @@ export default async function getEventDetails() {
   const result = await fetchEventDetails(eventIdurl);
   renderHtml(result);
 }
+// get data from api with matching id
 async function fetchEventDetails(eventIdurl) {
   const response = await fetch(eventIdurl);
   const result = await response.json();
@@ -21,6 +22,7 @@ async function fetchEventDetails(eventIdurl) {
   return result;
 }
 
+// render data in the html
 function renderHtml(result) {
   const eventElement = document.querySelector(".event-card__name");
   eventElement.textContent = result.name;
@@ -83,4 +85,14 @@ function renderHtml(result) {
   eventTableRow.appendChild(eventButton);
 
   eventListElement.appendChild(eventTableRow);
+}
+
+function renderInformationPage() {
+  // query selector
+  const informationParentElement = document.querySelector(
+    ".event__information"
+  );
+  const eventNameElement = document.querySelector(
+    ".event__information-eventName"
+  );
 }
