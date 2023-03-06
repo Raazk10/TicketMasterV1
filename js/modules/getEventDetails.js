@@ -1,5 +1,5 @@
 import eventInformation from "./eventInformation.js";
-const clientId = "aLGf7LIEfrlaEtpVXyO5Oj9InyDNM8gN";
+import { clientId } from "../env.js";
 const baseUrl = "https://app.ticketmaster.com/discovery/v2/events/";
 
 const urlParams = new URLSearchParams(window.location.search);

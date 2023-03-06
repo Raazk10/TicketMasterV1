@@ -1,4 +1,4 @@
-const clientId = "aLGf7LIEfrlaEtpVXyO5Oj9InyDNM8gN";
+import { clientId } from "../env.js";
 const url = `https://app.ticketmaster.com/discovery/v2/events.json?&apikey=${clientId}&locale=*&keyword=`;
 
 export default async function fetchEventSearch(query) {
