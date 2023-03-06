@@ -13,6 +13,7 @@ export default async function getEventDetails() {
 
   const result = await fetchEventDetails(eventIdurl);
   renderHtml(result);
+  renderInformationPage(result);
 }
 // get data from api with matching id
 async function fetchEventDetails(eventIdurl) {
@@ -87,12 +88,58 @@ function renderHtml(result) {
   eventListElement.appendChild(eventTableRow);
 }
 
-function renderInformationPage() {
+function renderInformationPage(result) {
   // query selector
-  const informationParentElement = document.querySelector(
-    ".event__information"
-  );
+
   const eventNameElement = document.querySelector(
     ".event__information-eventName"
   );
+  const eventTimeElement = document.querySelector(".event__information-time");
+  const eventDateElement = document.querySelector(".event__information-date");
+  const eventVenueElement = document.querySelector(".event__information-venue");
+
+  const eventDescriptionElement = document.querySelector(
+    ".event__information-description"
+  );
+
+  const organizerElement = document.querySelector(".organizer");
+
+  const eventPriceDetailElement = document.querySelector(
+    ".event__information-price-detail"
+  );
+  const eventPriceDetailElement1 = document.querySelector(
+    ".event__information-price-detail1"
+  );
+  const eventTicketInfoElement = document.querySelector(
+    ".event__information-ticketLimit-information"
+  );
+
+  // render text
+  eventNameElement.textContent = result.name;
+  eventTimeElement.textContent = result.dates.start.localTime;
+  eventDateElement.textContent = result.dates.start.localDate;
+  eventVenueElement.textContent = result._embedded.venues?.[0].name;
+  eventDescriptionElement.textContent = result.description
+    ? result.description
+    : "No description available at the moment";
+
+  if (result.url) {
+    organizerElement.href = result.url;
+    organizerElement.target = "_blank";
+  } else {
+    organizerElement.textContent = "No organizer information available";
+  }
+  console.log(result.url);
+
+  eventPriceDetailElement.textContent = result.priceRanges?.[1]
+    ? `${result.priceRanges[1].min} ${result.priceRanges[1].currency}-${result.priceRanges[1].max} ${result.priceRanges[1].currency} ${result.priceRanges[1].type}`
+    : "No price details available";
+
+  eventPriceDetailElement1.textContent = result.priceRanges?.[0]
+    ? `${result.priceRanges[0].min} ${result.priceRanges[0].currency}-${result.priceRanges[0].max} ${result.priceRanges[0].currency} ${result.priceRanges[0].type}`
+    : "Please check again later.";
+
+  eventTicketInfoElement.textContent = result.ticketLimit?.info
+    ? result.ticketLimit.info
+    : "No ticket info available at the moment";
 }
