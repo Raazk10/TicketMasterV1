@@ -6,9 +6,9 @@ export default function renderSearchEvent(searchedValue) {
   const totalEvents = searchedValue.length;
 
   // update the content heading with the total count
-  contentHeading.textContent = `${totalEvents} events in this area`;
+  contentHeading.textContent = `${totalEvents} events`;
 
-  const cardElements = searchedValue.map((event, index) => {
+  const cardElements = searchedValue.map((event) => {
     const cardElement = document.createElement("div");
     cardElement.classList.add("card");
     cardElement.dataset.eventId = event.id;
@@ -30,7 +30,7 @@ export default function renderSearchEvent(searchedValue) {
 
     const textElement = document.createElement("p");
     textElement.classList.add("card__text");
-    textElement.textContent = `${index + 1} Event`;
+    textElement.textContent = event.city;
 
     cardContent.appendChild(titleElement);
     cardContent.appendChild(textElement);

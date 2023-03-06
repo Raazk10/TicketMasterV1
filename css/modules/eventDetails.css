@@ -1,13 +1,15 @@
 /* Event styles */
-.event {
+.event-container {
 	max-width: 1200px;
+	width: 100%;
+	min-height: auto;
 	margin: 0 auto;
 	padding: 1rem;
+	position: relative;
 }
 
 .event__logo-link {
 	text-decoration: none;
-
 }
 
 .event__logo:hover {
@@ -38,7 +40,7 @@
 }
 
 .event__info__background {
-	content: '';
+	content: "";
 	position: absolute;
 	top: 10px;
 	left: 10px;
@@ -61,29 +63,23 @@
 	width: 100%;
 	max-width: 350px;
 	height: 280px;
-
-
 }
 
 .event-card__image {
 	max-width: 400px;
 	height: auto;
-
 }
 
 .event-card__details {
 	padding: 5px;
 	text-align: center;
 	height: 200px;
-
 }
 
 .event-card__name {
-
 	font-size: 0.8rem;
 	font-weight: 700;
 	color: var(--primary);
-
 }
 
 .event-card__button {
@@ -94,7 +90,6 @@
 }
 
 .event-card__details-button {
-
 	padding: 10px;
 	border: none;
 	border-radius: 5px;
@@ -119,12 +114,9 @@
 }
 
 .event__list {
-
 	color: var(--primary);
 	font-size: 1rem;
-
 }
-
 
 .event__footer {
 	background-color: var(--foreground);
@@ -135,7 +127,6 @@
 	font-size: 1rem;
 	color: var(--primary);
 	margin-top: 10px;
-
 }
 
 /*table styling*/
@@ -161,7 +152,6 @@ th {
 	color: var(--primary);
 	font-weight: 700;
 	font-size: 1.2rem;
-
 }
 
 tr:nth-child(even) {

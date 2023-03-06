@@ -13,6 +13,7 @@ export default function handleSearchEvent() {
     e.preventDefault();
     const query = searchInput.value;
     const searchedValue = await fetchEventSearch(query);
+    console.log(searchedValue);
     renderSearchEvent(searchedValue);
     searchInput.value = "";
   }

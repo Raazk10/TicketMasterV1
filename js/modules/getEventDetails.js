@@ -9,7 +9,7 @@ export default async function getEventDetails() {
   const eventId = urlParams.get("id");
 
   /* const url = `${baseUrl}${eventId}.json?apikey=${apiKey}`; */
-  const url = `https://app.ticketmaster.com/discovery/v2/events/${eventId}.json?apikey=aLGf7LIEfrlaEtpVXyO5Oj9InyDNM8gN`;
+  const url = `${baseUrl}${eventId}.json?apikey=${apiKey}`;
   console.log(eventId);
   const response = await fetch(url);
   const result = await response.json();
