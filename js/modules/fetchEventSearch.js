@@ -4,6 +4,7 @@ const url = `https://app.ticketmaster.com/discovery/v2/events.json?&apikey=${cli
 export default async function fetchEventSearch(query) {
   const response = await fetch(`${url}${query}`);
   const result = await response.json();
+  console.log(result);
 
   const events = result._embedded?.events?.map((event) => {
     return {

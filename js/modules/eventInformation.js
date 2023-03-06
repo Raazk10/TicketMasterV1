@@ -8,13 +8,11 @@ export default function eventInformation() {
 
   // event listener
   informationButton.addEventListener("click", showInformationPage);
-
   backButton.addEventListener("click", hideInformationPage);
 
   //method
 
   function showInformationPage() {
-    console.log("button");
     eventInformation.classList.add("event__information-visible");
   }
 

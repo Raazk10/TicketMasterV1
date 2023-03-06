@@ -1,24 +1,20 @@
 import eventInformation from "./eventInformation.js";
 import { clientId } from "../env.js";
+
 const baseUrl = "https://app.ticketmaster.com/discovery/v2/events/";
 
 const urlParams = new URLSearchParams(window.location.search);
 const eventId = urlParams.get("id");
-const url = `${baseUrl}${eventId}.json?apikey=${clientId}`;
+const eventIdurl = `${baseUrl}${eventId}.json?apikey=${clientId}`;
 const eventDetailContainer = document.querySelector(".event-card__details");
 
 export default async function getEventDetails() {
   eventInformation();
-  console.log(eventId);
-  const response = await fetch(url);
+
+  const response = await fetch(eventIdurl);
   const result = await response.json();
   console.log(result);
 
-  //console.log(events);
-
-  if (!result) {
-    throw new Error(`Could not find event with ID ${eventId}`);
-  }
   const eventElement = document.querySelector(".event-card__name");
   eventElement.textContent = result.name;
 
