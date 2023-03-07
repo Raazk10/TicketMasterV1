@@ -5,6 +5,7 @@ export default function handleSearchEvent() {
   // qyery selector
   const searchInput = document.querySelector(".search__input");
   const searchForm = document.querySelector(".search");
+
   //event listener
   searchForm.addEventListener("submit", handleSearch);
 
@@ -13,9 +14,7 @@ export default function handleSearchEvent() {
     e.preventDefault();
     const query = searchInput.value;
     const searchedValue = await fetchEventSearch(query);
-
     renderSearchEvent(searchedValue);
-
     searchInput.value = "";
   }
 }
