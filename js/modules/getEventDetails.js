@@ -1,4 +1,5 @@
-import eventInformation from "./eventInformation.js";
+import showHideInfo from "./showHideInfo.js";
+import showHideAttraction from "./showHideAttraction.js";
 import { clientId } from "../env.js";
 
 const baseUrl = "https://app.ticketmaster.com/discovery/v2/events/";
@@ -9,11 +10,13 @@ const eventIdurl = `${baseUrl}${eventId}.json?apikey=${clientId}`;
 const eventDetailContainer = document.querySelector(".event-card__details");
 
 export default async function getEventDetails() {
-  eventInformation();
+  showHideInfo();
+  showHideAttraction();
 
   const result = await fetchEventDetails(eventIdurl);
   renderHtml(result);
   renderInformationPage(result);
+  renderShowAttraction(result);
 }
 // get data from api with matching id
 async function fetchEventDetails(eventIdurl) {
@@ -88,6 +91,19 @@ function renderHtml(result) {
   eventListElement.appendChild(eventTableRow);
 }
 
+// list all attraction name when clicked on down arrow
+function renderShowAttraction(results) {
+  const attractionParentElement = document.querySelector(".list__Attraction");
+
+  const lineupAttraction = document.createElement("ul");
+  results._embedded.attractions.forEach((result) => {
+    const attractionItem = document.createElement("li");
+    attractionItem.textContent = `- ${result.name}`;
+    lineupAttraction.appendChild(attractionItem);
+  });
+  attractionParentElement.appendChild(lineupAttraction);
+}
+
 function renderInformationPage(result) {
   // query selector
 
@@ -129,7 +145,6 @@ function renderInformationPage(result) {
   } else {
     organizerElement.textContent = "No organizer information available";
   }
-  console.log(result.url);
 
   eventPriceDetailElement.textContent = result.priceRanges?.[1]
     ? `${result.priceRanges[1].min} ${result.priceRanges[1].currency}-${result.priceRanges[1].max} ${result.priceRanges[1].currency} ${result.priceRanges[1].type}`
