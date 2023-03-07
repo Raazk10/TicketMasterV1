@@ -18,9 +18,3 @@ body {
 
 
 }
-
-
-
-button:hover {
-	background: var(--highlight);
-}

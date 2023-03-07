@@ -181,3 +181,49 @@ tr:nth-child(even) {
 .buy-ticket-button:hover {
 	background-color: var(--button-color-hover);
 }
+
+/* Show attraction styling*/
+.showAttraction {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	color: var(--primary);
+
+}
+
+
+.showAttraction-button img {
+	width: 24px;
+	height: 24px;
+
+
+}
+
+.showAttraction-button img:hover {
+	transform: scale(0.9);
+}
+
+.list__Attraction {
+	font-size: 1rem;
+	display: none;
+}
+
+
+.list__Attraction.visible {
+	display: block;
+}
+
+.list__Attraction p {
+	border-bottom: 1px solid var(--primary);
+
+}
+
+.list__Attraction ul {
+	margin-top: 1rem;
+
+}
+
+.list__Attraction li {
+	font-size: 0.8rem;
+}
