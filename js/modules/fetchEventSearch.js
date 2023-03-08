@@ -1,5 +1,5 @@
 import { clientId } from "../env.js";
-const url = `https://app.ticketmaster.com/discovery/v2/events.json?&apikey=${clientId}&locale=*&keyword=`;
+const url = `https://app.ticketmaster.com/discovery/v2/events.json?&apikey=${clientId}&size=50&locale=*&keyword=`;
 
 export default async function fetchEventSearch(query) {
   const response = await fetch(`${url}${query}`);
