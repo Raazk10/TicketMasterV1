@@ -1,11 +1,9 @@
 /* Event styles */
 .event-container {
-	max-width: 1200px;
-	width: 100%;
-	min-height: auto;
 	margin: 0 auto;
-	padding: 1rem;
 	position: relative;
+	max-width: 1200px;
+	min-width: 445px;
 }
 
 .event__logo-link {
@@ -18,6 +16,7 @@
 
 .event__header {
 	display: flex;
+	flex-wrap: wrap;
 	align-items: center;
 	justify-content: space-between;
 	padding: 1rem;
@@ -29,14 +28,16 @@
 .event__logo {
 	font-size: 2rem;
 	font-weight: bold;
+	font-style: italic;
+	margin-right: 1rem;
 }
 
 .event__info {
 	position: relative;
 	padding: 1rem 0;
-	height: 310px;
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
+	align-items: center;
 }
 
 .event__info__background {
@@ -56,17 +57,17 @@
 	position: relative;
 	display: flex;
 	flex-direction: column;
-
+	margin: 1rem;
 	padding: 10px;
 	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 	overflow: hidden;
-	width: 100%;
 	max-width: 350px;
-	height: 280px;
+	min-width: 280px;
 }
 
 .event-card__image {
-	max-width: 400px;
+	/* max-width: 400px; */
+	width: 100%;
 	height: auto;
 }
 
@@ -74,11 +75,15 @@
 	padding: 5px;
 	text-align: center;
 	height: 200px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
 }
 
 .event-card__name {
-	font-size: 0.8rem;
+	font-size: 1rem;
 	font-weight: 700;
+	margin-bottom: 1rem;
 	color: var(--primary);
 }
 
@@ -97,8 +102,9 @@
 	color: var(--primary);
 	font-size: 1rem;
 	cursor: pointer;
-	margin-left: 20px;
+	margin-left: 0 auto;
 	font-style: italic;
+	margin-top: 1rem;
 }
 
 .event-card__details-button:hover {
@@ -108,14 +114,17 @@
 .event__classification {
 	display: flex;
 	flex-direction: row;
+	flex-wrap: wrap;
 	gap: 10px;
 	color: var(--primary);
 	font-size: 0.8rem;
+	margin-bottom: 1rem;
 }
 
 .event__list {
 	color: var(--primary);
 	font-size: 1rem;
+	margin-bottom: 1rem;
 }
 
 .event__footer {
@@ -126,25 +135,28 @@
 	font-weight: bold;
 	font-size: 1rem;
 	color: var(--primary);
-	margin-top: 10px;
+	margin-top: 1rem;
+
 }
 
 /*table styling*/
 .event__table {
 	margin: 0 auto;
 	max-width: 100%;
-	margin-bottom: 10px;
+	margin-bottom: 1rem;
 }
 
 table {
 	border-collapse: collapse;
 	width: 100%;
+
 }
 
 th,
 td {
 	padding: 12px;
 	text-align: left;
+
 }
 
 th {
@@ -173,8 +185,9 @@ tr:nth-child(even) {
 .buy-ticket-button {
 	background-color: var(--button-color);
 	color: var(--primary);
-	padding: 10px 20px;
+	padding: 10px 10px;
 	border-radius: 5px;
+	font-size: 1rem;
 	cursor: pointer;
 }
 
@@ -226,4 +239,47 @@ tr:nth-child(even) {
 
 .list__Attraction li {
 	font-size: 0.8rem;
+}
+
+/* Mobile STYLES */
+
+@media only screen and (max-width: 595px) {
+	.buy-ticket-button {
+		font-size: 1rem;
+		width: max-content;
+	}
+}
+
+@media only screen and (max-width: 495px) {
+
+
+	.event__table {
+		margin: 20px auto;
+		max-width: 100%;
+		margin-bottom: 1rem;
+
+	}
+
+	table {
+
+		flex-wrap: wrap;
+		display: flex;
+		justify-content: space-between;
+		align-content: center;
+
+	}
+
+	th,
+	td {
+		display: flex;
+		flex-direction: column;
+		align-content: center;
+		align-items: center;
+	}
+
+	th {
+
+		background-color: var(--background);
+
+	}
 }

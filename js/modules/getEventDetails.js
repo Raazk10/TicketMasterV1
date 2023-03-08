@@ -81,7 +81,7 @@ function renderHtml(result) {
   const eventButton = document.createElement("td");
   const buttonTicket = document.createElement("button");
   buttonTicket.classList.add("buy-ticket-button");
-  buttonTicket.textContent = "Buy Tickets";
+  buttonTicket.textContent = "Buy tickets";
   buttonTicket.addEventListener("click", () => {
     window.location.href = result.url;
   });
