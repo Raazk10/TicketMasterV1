@@ -1,11 +1,11 @@
 **\*\***\***\*\***Project Description**\*\***\***\*\***
-This is a application that allows users to search for upcoming events using the Ticketmaster API.Users can search for events by Artist, Event and Venue. The application returns a list of matched search criteria, along with the image event name and city. Users can select an event to view more details and purchase tickets through the Ticketmaster website.
+This is an application that allows users to search for upcoming events using the Ticketmaster API.Users can search for events by Artist, Event and Venue. The application returns a list of matched search criteria, along with the image event name and city. Users can select an event to view more details and purchase tickets through the Ticketmaster website.
 The application is written using HTML,CSS and Javascript.
 
 **\*\***\*\***\*\***Getting Started**\*\*\*\***\*\***\*\*\*\***
 To use this application you can type https://ticketmasterraaz.netlify.app/
 
-**\*\*\*\***\***\*\*\*\***How to Use Application****\*\*\*\*****\*****\*\*\*\*****
+**\*\*\*\***\***\*\*\*\***How to Use Application\***\*\*\*\*\*\*\***\*\***\*\*\*\*\*\*\***
 The application will ask to enter search criteria. You can seach fo events like :
 
 -Enter keyword (e.g. music, sports,venue): music
