@@ -12,6 +12,7 @@ export default function renderSearchEvent(searchedValue) {
     const cardElement = document.createElement("div");
     cardElement.classList.add("card");
     cardElement.dataset.eventId = event.id;
+
     cardElement.addEventListener("click", () => {
       const eventId = cardElement.dataset.eventId;
       window.location.href = `/eventDetails.html?id=${eventId}`;
