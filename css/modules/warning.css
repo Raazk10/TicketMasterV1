@@ -1,0 +1,12 @@
+.warning {
+	background-color: firebrick;
+	color: #fff;
+	padding: 1rem;
+	max-width: max-content;
+	text-align: center;
+	font-size: 1.8rem;
+}
+
+.hidden {
+	display: none;
+}

@@ -2,6 +2,7 @@
 @import './variables.css';
 @import './base.css';
 @import "./modules/header.css";
+@import "./modules/warning.css";
 @import "./modules/responsive.css";
 @import "./modules/searchInput.css";
 @import "./modules/eventDetails.css";
