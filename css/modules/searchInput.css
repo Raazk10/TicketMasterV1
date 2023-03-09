@@ -1,7 +1,7 @@
 .search {
 	position: relative;
 	background-color: var(--primary);
-	padding: 1rem;
+	padding: 2.2rem;
 }
 
 .search__wrapper {
@@ -26,7 +26,7 @@
 	border-radius: 0.5rem;
 	background-color: var(--button-color);
 	color: var(--primary);
-	padding: 0.5rem;
+	padding: 1rem;
 	cursor: pointer;
 }
 

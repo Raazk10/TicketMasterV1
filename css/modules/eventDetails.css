@@ -2,8 +2,8 @@
 .event-container {
 	margin: 0 auto;
 	position: relative;
-	max-width: 1200px;
-	min-width: 445px;
+	max-width: 100%;
+	min-width: 430px;
 }
 
 .event__logo-link {
