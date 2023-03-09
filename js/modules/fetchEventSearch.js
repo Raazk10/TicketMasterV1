@@ -6,6 +6,12 @@ export default async function fetchEventSearch(query) {
   const result = await response.json();
   console.log(result);
 
+  /* try{
+    await handleResponse(response);
+  }catch(error){
+   handleError(error)
+  } */
+
   const events = result._embedded?.events?.map((event) => {
     return {
       name: event.name,
