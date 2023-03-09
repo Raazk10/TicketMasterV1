@@ -29,7 +29,6 @@ async function fetchEventDetails(eventIdurl) {
 // render data in the html
 function renderHtml(result) {
   const eventElement = document.querySelector(".event-card__name");
-  eventElement.textContent = result.name;
 
   const eventInfoBackground = document.querySelector(
     ".event__info__background"
