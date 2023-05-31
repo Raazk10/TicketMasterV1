@@ -33,3 +33,4 @@ and use feature branch to contribute.
 
 **\*\*\*\***\***\*\*\*\***Contact Information**\*\*\*\***\***\*\*\*\***
 github link https://github.com/Raazk10/TicketMasterV1.git
+netlify link : https://ticketmasterraaz.netlify.app/
