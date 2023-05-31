@@ -32,5 +32,4 @@ and use feature branch to contribute.
 -Add map funtionality for the venue location.
 
 **\*\*\*\***\***\*\*\*\***Contact Information**\*\*\*\***\***\*\*\*\***
-Nam:Raj Kumar Thapa
-Email:rakioraag10@gmail.com
+github link https://github.com/Raazk10/TicketMasterV1.git
