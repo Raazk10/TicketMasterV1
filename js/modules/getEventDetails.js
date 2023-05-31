@@ -4,10 +4,12 @@ import { clientId } from "../env.js";
 
 const baseUrl = "https://app.ticketmaster.com/discovery/v2/events/";
 
+const eventDetailContainer = document.querySelector(".event-card__details");
 const urlParams = new URLSearchParams(window.location.search);
+// get id from event and passed through second page to get event details
+
 const eventId = urlParams.get("id");
 const eventIdurl = `${baseUrl}${eventId}.json?apikey=${clientId}`;
-const eventDetailContainer = document.querySelector(".event-card__details");
 
 export default async function getEventDetails() {
   showHideInfo();
@@ -22,7 +24,6 @@ export default async function getEventDetails() {
 async function fetchEventDetails(eventIdurl) {
   const response = await fetch(eventIdurl);
   const result = await response.json();
-  console.log(result);
   return result;
 }
 
