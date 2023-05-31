@@ -11,6 +11,8 @@ export default function renderSearchEvent(searchedValue) {
   const cardElements = searchedValue.map((event) => {
     const cardElement = document.createElement("div");
     cardElement.classList.add("card");
+
+    // get the id of the event
     cardElement.dataset.eventId = event.id;
 
     cardElement.addEventListener("click", () => {
